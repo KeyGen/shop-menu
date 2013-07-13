@@ -1,0 +1,64 @@
+<!--Menu shop - краткое описание на английском-->
+<!--Copyright (C) 2012 <developer.webasyst@yandex.ua>-->
+
+<!--This program is free software; you can redistribute it and/or-->
+<!--modify it under the terms of the GNU General Public License-->
+<!--as published by the Free Software Foundation; either version 2-->
+<!--of the License, or (at your option) any later version.-->
+
+<!--This program is distributed in the hope that it will be useful,-->
+<!--but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the-->
+<!--GNU General Public License for more details.-->
+
+<!--You should have received a copy of the GNU General Public License-->
+<!--along with this program; if not, write to the Free Software-->
+<!--Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,-->
+<!--MA 02110-1301, USA.-->
+
+<script type='text/javascript' src='/wa-apps/shop/plugins/menuShop/js/jQuery/js/jquery-1.8.3.js'></script>
+<script type='text/javascript' src='/wa-apps/shop/plugins/menuShop/js/liMenuVert/js/jquery.liMenuVert.js'></script>
+<link rel="stylesheet" href="/wa-apps/shop/plugins/menuShop/js/liMenuVert/css/liMenuVert.css">
+<link rel="stylesheet" href="/wa-apps/shop/plugins/menuShop/js/liMenuVert/css/liMenuVertTheme-{$menu->setting_default.STYLE_FRONTEND}.css">
+
+
+{$super_block=$menu->super}
+{$block_two=$menu->block_two}
+{$block_three=$menu->block_three}
+
+{if $super_block}
+    <ul class="menu_vert">
+        {section name=customer loop=$super_block}
+        <li><a href="{$super_block[customer].link}"><span style="color: {$super_block[customer].color}; {if $super_block[customer].bold} font-weight: bolder; {else} font-weight: normal; {/if}">{$super_block[customer].name}<b style="color: red;">{$super_block[customer].prefix}</b></span></a>
+            {if $block_two[$super_block[customer].id]}
+            <ul>
+                {section name=customer_two loop=$block_two[$super_block[customer].id]}
+
+                <li><a href="{$block_two[$super_block[customer].id][customer_two].link}" title=""><span style="color: {$block_two[$super_block[customer].id][customer_two].color}; {if $block_two[$super_block[customer].id][customer_two].bold} font-weight: bolder; {else} font-weight: normal; {/if}">{$block_two[$super_block[customer].id][customer_two].name}<b style="color: red;">{$block_two[$super_block[customer].id][customer_two].prefix}</b></span></a>
+
+                    {if $block_three[$block_two[$super_block[customer].id][customer_two].id]}
+                    <ul>
+                        {section name=customer_three loop=$block_three[$block_two[$super_block[customer].id][customer_two].id]}
+                        <li><a href="{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].link}" title=""><span style="color: {$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].color}; {if $block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].bold} font-weight: bolder; {else} font-weight: normal; {/if}">{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].name}<b style="color: red;">{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].prefix}</b></span></a></li>
+                        {/section}
+                    </ul>
+                    {/if}
+
+                    {/section}
+            </ul>
+            {/if}
+        </li>
+        {/section}
+    </ul>
+{literal}
+<script type="text/javascript">
+    tabs_menu_editor(function(){
+        tabs_menu_editor('.menu_vert').liMenuVert({
+            delayShow:300,    //Задержка перед появлением выпадающего меню (ms)
+            delayHide:300     //Задержка перед исчезанием выпадающего меню (ms)
+        });
+    });
+</script>
+{/literal}
+
+{/if}

@@ -1,0 +1,21 @@
+/*layout css*/
+body,html { min-height:100%; padding:0; margin:0}
+body { font:12px/1.2em Arial, Helvetica, sans-serif; color:#999; padding:0 100px; margin:0;}
+.header {
+	background: #ccc;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	height:72px;
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+}
+.conteiner {
+	margin: auto;
+	max-width: 800px;
+	text-align:center;
+	padding:115px 0 0 0;
+}
+.sample { padding:10px 0; position:relative;}

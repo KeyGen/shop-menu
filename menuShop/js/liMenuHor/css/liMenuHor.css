@@ -1,0 +1,18 @@
+/*bind css (not edit)*/
+.menu_hor { border: 1px solid #d4d4d4; border-radius: 5px; margin: 0; padding: 0; position: relative; word-spacing: -0.25em; }
+.menu_hor li {  display: inline-block; //display: inline; //zoom: 1; list-style: none; margin: 0; padding: 0; text-align: left; vertical-align: top; word-spacing: normal; }
+.menu_hor a { border-radius: 5px; color: #666; display: inline-block; font: 12px/1.2em Arial, Helvetica, sans-serif; padding: 10px 10px; text-align: left; text-decoration: none; white-space:nowrap }
+.menu_hor a:hover { background: #eee; color: #000; text-decoration: none; text-shadow: 0 1px 0 #fff; }
+.menu_hor .active { background: #eee; color: #000; }
+.menu_hor ul { background: #fff; border: 1px solid #c2c2c2; border-radius: 5px; box-shadow: 0 5px 10px rgba(0,0,0,0.2); display: none; left: 0; margin: 0; padding: 0; position: absolute; top: 0; }
+.menu_hor ul li { display: block; list-style: none; margin: 0; padding: 0; }
+.menu_hor ul a { display: block; white-space: nowrap; }
+.menu_hor ul ul { display: none; left: 0; margin: 0; padding: 0; position: absolute; top: 0;z-index:2 }
+.arrow-up { border-bottom: 5px solid #fff; border-left: 5px solid transparent; border-right: 5px solid transparent; height: 0; left: 10px; position: absolute; top: -4px; width: 0; z-index: 1; }
+.arrow-up2 { border-bottom: 5px solid #c2c2c2; border-left: 5px solid transparent; border-right: 5px solid transparent; height: 0; left: 10px; position: absolute; top: -5px; width: 0; z-index: 0; }
+.arrow-left { border-bottom: 5px solid transparent; border-right: 5px solid #fff; border-top: 5px solid transparent; height: 0; left: -4px; position: absolute; top: 0; width: 0; z-index: 1; }
+.arrow-left2 { border-bottom: 5px solid transparent; border-right: 5px solid #c2c2c2; border-top: 5px solid transparent; height: 0; left: -5px; position: absolute; top: 0; width: 0; z-index: 0; }
+.toLeft .arrow-left { border-left: 5px solid #fff; border-right: 0; left: auto; right: -4px; }
+.toLeft .arrow-left2 { border-left: 5px solid #c2c2c2; border-right: 0; left: auto; right: -5px; }
+.arrow-down {display:inline-block;//display:inline;//zoom:1;vertical-align:top;margin:5px 0 0 5px;width: 0; height: 0; border-left: 4px solid transparent;border-right: 4px solid transparent;border-top: 4px solid #666;}
+.arrow-right {display:inline-block;//display:inline;//zoom:1;vertical-align:top;margin:3px 0 0 5px;width: 0; height: 0; border-top: 4px solid transparent;border-bottom: 4px solid transparent;	border-left: 4px solid #666;}

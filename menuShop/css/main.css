@@ -1,0 +1,190 @@
+/*Menu shop - краткое описание на английском*/
+/*Copyright (C) 2012  <developer.webasyst@yandex.ua>*/
+
+/*This program is free software; you can redistribute it and/or*/
+/*modify it under the terms of the GNU General Public License*/
+/*as published by the Free Software Foundation; either version 2*/
+/*of the License, or (at your option) any later version.*/
+
+/*This program is distributed in the hope that it will be useful,*/
+/*but WITHOUT ANY WARRANTY; without even the implied warranty of*/
+/*MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the*/
+/*GNU General Public License for more details.*/
+
+/*You should have received a copy of the GNU General Public License*/
+/*along with this program; if not, write to the Free Software*/
+/*Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,*/
+/*MA 02110-1301, USA.*/
+
+.editSuperMenu {
+    background-image: url(/wa-apps/shop/plugins/menuShop/img/setting.png);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: -11px;
+}
+
+.addBlock {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: 36px;
+    left: 33px;
+    z-index: 1;
+}
+
+.removeBanner {
+    position: relative;
+    left: -15px;
+    top: -10px;
+    width: 24px;
+    height: 24px;
+}
+
+.editNameSuperMenu{
+    border: none;
+}
+
+.helpMenu {
+    width: 24px;
+    height: 24px;
+}
+
+.settingMenu {
+    width: 24px;
+    height: 24px;
+}
+
+.dialog-edit-block-error{
+    font-size: 12px;
+    color: red;
+    display: none;
+
+}
+
+.dialog-edit-block {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.dialog-edit-block table {
+    width: 100%; /* Ширина таблицы */
+    border: 1px solid #399; /* Граница вокруг таблицы */
+    border-spacing: 7px 5px; /* Расстояние между границ */
+}
+.dialog-edit-block td {
+    border: 1px solid #333; /* Граница вокруг ячеек */
+    padding: 5px; /* Поля в ячейках */
+}
+.dialog-edit-block input {
+    width: 97%;
+}
+
+.dialog-setting {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.dialog-setting table {
+    width: 100%; /* Ширина таблицы */
+    border: 1px solid #399; /* Граница вокруг таблицы */
+    border-spacing: 7px 5px; /* Расстояние между границ */
+}
+.dialog-setting td {
+    border: 1px solid #333; /* Граница вокруг ячеек */
+    padding: 5px; /* Поля в ячейках */
+}
+.dialog-setting input {
+    width: 97%;
+}
+
+.addBlockTwo {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.ui-tabs-panel {
+    padding: 10px 0 0 0px !important;
+}
+
+.nameAccordion {
+    width: 100%;
+    text-align: left;
+}
+
+.editAccordion {
+    top: 4px;
+    left: 1px;
+}
+
+.sort-table-class{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+.sort-table-class li{
+    margin: 2px;
+}
+
+.ui-accordion-content{
+    padding: 0px 14px 12px 14px !important;
+}
+
+.addBlockThree {
+    text-align: right;
+    width: 24px;
+    height: 24px;
+}
+
+.nameTabs {
+    text-align: center;
+}
+
+.ui-tabs {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.ui-widget-content {
+   border: 0px !important;
+}
+
+.ui-widget-header{
+    background: #808081 !important;
+}
+
+.ui-state-hover{
+    background: #b3b3b3 !important;
+}
+
+.ui-accordion-content {
+    border: 1px solid #808081 !important;
+}
+
+.ui-dialog-buttonpane {
+    padding: 0px 10px 0px 10px !important;
+}
+
+.dialog-help {
+    padding: 10px 10px 0px 10px !important;
+}
+
+.dialog-help-2 {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.dialog-help-description {
+    padding: 10px 10px 10px 10px !important;
+    border-right: 1px solid !important;
+    border-left: 1px solid !important;
+    border-bottom: 1px solid !important;
+}
+

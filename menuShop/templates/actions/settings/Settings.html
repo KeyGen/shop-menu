@@ -1,0 +1,322 @@
+<!--Menu shop - краткое описание на английском-->
+<!--Copyright (C) 2012 <developer.webasyst@yandex.ua>-->
+
+<!--This program is free software; you can redistribute it and/or-->
+<!--modify it under the terms of the GNU General Public License-->
+<!--as published by the Free Software Foundation; either version 2-->
+<!--of the License, or (at your option) any later version.-->
+
+<!--This program is distributed in the hope that it will be useful,-->
+<!--but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the-->
+<!--GNU General Public License for more details.-->
+
+<!--You should have received a copy of the GNU General Public License-->
+<!--along with this program; if not, write to the Free Software-->
+<!--Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,-->
+<!--MA 02110-1301, USA.-->
+
+
+<script type='text/javascript' src='/wa-apps/shop/plugins/menuShop/js/color-picker-selection-rudebox/js/colorpicker.min.js'></script>
+<script type='text/javascript' src='/wa-apps/shop/plugins/menuShop/js/jQuery/js/jquery-1.8.3.js'></script>
+<script type='text/javascript' src='/wa-apps/shop/plugins/menuShop/js/jQuery/js/jquery-ui-1.9.2.custom.js'></script>
+<script type='text/javascript' src='/wa-apps/shop/plugins/menuShop/js/jQuery/js/jquery-ui-1.9.2.custom.min.js'></script>
+
+<link rel="stylesheet" href="/wa-apps/shop/plugins/menuShop/js/color-picker-selection-rudebox/css/style.css" type="text/css">
+<link rel="stylesheet" href="/wa-apps/shop/plugins/menuShop/js/color-picker-selection-rudebox/css/themes.css" type="text/css">
+<link rel="stylesheet" href="/wa-apps/shop/plugins/menuShop/css/main.css" type="text/css">
+
+
+<script type="text/javascript">
+    var position = 0;
+
+    var orientation = '{$menu->setting_default.ORIENTATION}';
+    var style_menu =  '{$menu->setting_default.STYLE_FRONTEND}';
+
+    var orientation_default = '{$menu->setting_default.ORIENTATION}';
+    var style_menu_default =  '{$menu->setting_default.STYLE_FRONTEND}';
+
+    var name_default = '{$menu->setting_default.NAME_DEFAULT}';
+    var color_default = '{$menu->setting_default.COLOR_DEFAULT}';
+    var bold_default  = '{$menu->setting_default.BOLD_DEFAULT}';
+</script>
+
+<script type="text/javascript"> var csrf = '{$wa->csrf()}'; csrf = csrf.replace('<input type="hidden" name="_csrf" value="','').replace('" />','');</script>
+
+{$super_block=$menu->super}
+{$block_two=$menu->block_two}
+{$block_three=$menu->block_three}
+<table style="display: inline;"><tr><td style="width: 100%;"></td><td><img class="addBlock" src="/wa-apps/shop/plugins/menuShop/img/plus_big.png"/></td><td><img class="settingMenu" src="/wa-apps/shop/plugins/menuShop/img/setting_big.png"/></td><td><img class="helpMenu" src="/wa-apps/shop/plugins/menuShop/img/help_big.png"/></td></tr></table>
+{if $super_block}
+    <div id="tabs-menu-editor">
+        <ul  style="height: 30px;">
+    {section name=customer loop=$super_block}
+        <li class="li_class"><a href="#menuSuper_{$super_block[customer].id}"><div class="nameTabs tabs_width_find" style="display: inline-block; color: {$super_block[customer].color}; {if $super_block[customer].bold} font-weight: bolder; {else} font-weight: normal; {/if}"><div style="display: inline">{$super_block[customer].name}</div><b style="color: red;">{$super_block[customer].prefix}</b><div id="editSuperMenu_{$super_block[customer].id}" class="editSuperMenu"></div></div></a></li>
+        {/section}
+        </ul>
+        {section name=customer loop=$super_block}
+        <div id="menuSuper_{$super_block[customer].id}">
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <td style="text-align: center; width: 100%; border: 1px solid; vertical-align:top; padding: 0px 0px 0px 0px;">
+                        <div style="text-align: right;">
+                            <img id="add_block_two_{$super_block[customer].id}" class="addBlockTwo" src="/wa-apps/shop/plugins/menuShop/img/plus_big.png"/>
+                        </div>
+                        <ul class="sort-table-class" id="selectable-{$super_block[customer].id}" >
+
+                        {section name=customer_two loop=$block_two[$super_block[customer].id]}
+                            <li>
+                            <div id="accordion-{$block_two[$super_block[customer].id][customer_two].id}">
+                                <h3>
+                                    <a href="#menuSuper_{$block_two[$super_block[customer].id][customer_two].id}"><div id="editSuperMenu_{$block_two[$super_block[customer].id][customer_two].id}" class="editAccordion editSuperMenu"></div><div class="nameAccordion nameTabs" style="display: inline-block; color: {$block_two[$super_block[customer].id][customer_two].color}; {if $block_two[$super_block[customer].id][customer_two].bold} font-weight: bolder; {else} font-weight: normal; {/if}"><div style="display: inline">{$block_two[$super_block[customer].id][customer_two].name}</div><b style="color: red;">{$block_two[$super_block[customer].id][customer_two].prefix}</b></div></a>
+                                </h3>
+                                <div>
+                                    <div style="width: 100%; text-align: right;">
+                                    <img id="add_block_three_{$block_two[$super_block[customer].id][customer_two].id}" class="addBlockThree" src="/wa-apps/shop/plugins/menuShop/img/plus_big.png"/>
+                                    </div>
+                                        <ul class="sort-table-class" id="selectable-{$block_two[$super_block[customer].id][customer_two].id}" >
+
+                                        {section name=customer_three loop=$block_three[$block_two[$super_block[customer].id][customer_two].id]}
+                                        <li>
+
+                                            <div id="accordion-{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].id}">
+                                                <h3>
+                                                    <a href="#menuSuper_{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].id}"><div id="editSuperMenu_{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].id}" class="editAccordion editSuperMenu"></div><div class="nameAccordion nameTabs" style="display: inline-block; color: {$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].color}; {if $block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].bold} font-weight: bolder; {else} font-weight: normal; {/if}"><div style="display: inline">{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].name}</div><b style="color: red;">{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].prefix}</b></div></a>
+                                                </h3>
+                                            </div>
+                                        </li>
+
+                                        {literal}
+                                        <script type="text/javascript">
+                                            tabs_menu_editor( "#accordion-{/literal}{$block_three[$block_two[$super_block[customer].id][customer_two].id][customer_three].id}{literal}" ).accordion({collapsible:true, active:false, autoHeight:false, event:"dblclickf"}).click(function(e){
+                                                e.stopImmediatePropagation();
+                                                e.preventDefault();
+                                                var div = $(this).next('div');
+                                                if (div.is(":visible")) return;
+                                                $('#accordion div').slideUp();
+                                                div.slideDown();
+                                            });
+                                        </script>
+                                        {/literal}
+                                        {/section}
+                                    </ul>
+
+                                    {literal}
+                                    <script type="text/javascript">
+                                        tabs_menu_editor( "#selectable-{/literal}{$block_two[$super_block[customer].id][customer_two].id}{literal}" ).sortable({
+                                            placeholder:"ui-state-highlight",
+                                            axis: "y",
+                                            scroll:false,
+                                            activate: function(event, ui) { tabs_menu_editor(this).css('height',tabs_menu_editor(this).height()+tabs_menu_editor(ui.item).height()+'px') },
+                                            start: function(event, ui) { position = ui.item.index(); },
+                                            stop: function(event, ui)  { editPositionAjax(position, ui.item.index(), 2); position = -1; tabs_menu_editor(this).css('height','auto'); }
+                                        }).disableSelection();
+                                    </script>
+                                    {/literal}
+                                </div>
+                            </div>
+                            </li>
+
+                            {literal}
+                            <script type="text/javascript">
+                                tabs_menu_editor( "#accordion-{/literal}{$block_two[$super_block[customer].id][customer_two].id}{literal}" ).accordion({collapsible:true, active:false, autoHeight:false, event:"dblclick"}).click(function(e){
+                                    e.stopImmediatePropagation();
+                                    e.preventDefault();
+                                    var div = $(this).next('div');
+                                    if (div.is(":visible")) return;
+                                    $('#accordion div').slideUp();
+                                    div.slideDown();
+                                });
+                            </script>
+                            {/literal}
+                        {/section}
+                        </ul>
+
+                        {literal}
+                        <script type="text/javascript">
+                            tabs_menu_editor( "#selectable-{/literal}{$super_block[customer].id}{literal}" ).sortable({
+                                placeholder:"ui-state-highlight",
+                                axis: "y",
+                                start: function(event, ui) { position = ui.item.index(); },
+                                stop: function(event, ui)  { editPositionAjax(position, ui.item.index(), 1); position = -1; }
+                            }).disableSelection();
+                        </script>
+                        {/literal}
+
+                    <td style="text-align: center; border-right: 1px solid; border-top: 1px solid; border-bottom: 1px solid;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        {/section}
+    </div>
+{else}
+    <div id="tabs-menu-editor">
+        <ul style="height: 30px;">
+        </ul>
+    </div>
+{/if}
+
+<!-- Диалоги -->
+<div class="dialog-edit-block" id="dialog-edit-block">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="name" placeholder="Имя">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="link" placeholder="Ссылка">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="prefix" placeholder="Префикс">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="display: inline; font-weight: bolder">Жирный шрифт:</div> <input type="checkbox" name="bold">
+                </td>
+            </tr>
+            <tr>
+                <td id="color-editor">
+                    <div style="font-weight: bolder">Цвет для блока.</div><br>
+                    <input style="width: 100px; text-align: center;" name='color' type="text" value="#fffff"><br><br>
+                </td>
+            </tr>
+        </table>
+        <div class="dialog-edit-block-error"></div>
+</div>
+
+<div class="dialog-setting" id="dialog-setting">
+    <div class="dialog-help-2" id="tabs-dialog-setting">
+        <ul>
+            <li><a href="#tabs-dialog-setting-1">Настройки backend</a></li>
+            <li><a href="#tabs-dialog-setting-2">Настройки frontend</a></li>
+        </ul>
+        <div class="dialog-help-description" id="tabs-dialog-setting-1">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name='name' placeholder="Имя для новых блоков" value="{$menu->setting_default.NAME_DEFAULT}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: inline; font-weight: bolder">Шрифт по умолчанию. Жирный шрифт:</div> <input name='bold' type="checkbox" {if $menu->setting_default.BOLD_DEFAULT} checked {/if}>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="color-setting">
+                            <div style="font-weight: bolder">Цвет по умолчанию.</div><br>
+                            <input style="width: 100px; text-align: center;" name='color' type="text" value="{$menu->setting_default.COLOR_DEFAULT}"><br><br>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+
+        <div class="dialog-help-description" id="tabs-dialog-setting-2">
+            <table>
+                <tr>
+                    <td id="orientation_type_menu">
+                        <b style="width: 100%; text-align: center;">Направление меню:</b><br>
+                            Горизонтальное <input id="horizontal_orientation" type="radio" name="orientation_type">
+                            Вертикальное   <input id="vertical_orientation" type="radio" name="orientation_type">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="style_menu">
+                        <table style="width: 100%;">
+                            <tr style="text-align: center;">
+                                <td colspan="2"><b>Стиль меню:</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <img id="img_style_menu" src="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Black</td><td><input id="black_style" type="radio" name="style_menu"></td>
+                            </tr>
+                            <tr>
+                                <td>Gray</td><td><input id="gray_style" type="radio" name="style_menu"></td>
+                            </tr>
+                            <tr>
+                                <td>White</td><td><input id="white_style" type="radio" name="style_menu"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div style="display: none;" class="dialog-help" id="dialog-help">
+    <div class="dialog-help-2" id="tabs-dialog-help">
+        <ul>
+            <li><a href="#tabs-dialog-help-1">Здравствйте</a></li>
+            <li><a href="#tabs-dialog-help-2">GPL 2</a></li>
+        </ul>
+        <div class="dialog-help-description" id="tabs-dialog-help-1">
+            <p>
+                Плагин разработан для приложения shop для cms webasyst 5.<br>
+                Предназначен для создания, редактирования меню и вывода его во фронтенд сайта.<br><br>
+
+                Установка описана здесь: <a href="#">Shop menu</a><br><br>
+
+                Бета версия. <br><br>
+
+                Если появятся вопросы, пожелания обращайтесь:<br>
+                email: <b>developer.webasyst@yandex.ua</b>
+            </p>
+        </div>
+        <div class="dialog-help-description" id="tabs-dialog-help-2">
+            <p>
+                Плагин имеет лицензию GPL 2 (<a href="http://www.gnu.org/licenses/gpl2.txt">GNU GENERAL PUBLIC LICENSE</a>).
+                Распространяется бесплатно.<br><br>
+
+                Menu shop - краткое описание на английском<br>
+                Copyright (C) 2012 email: developer.webasyst@yandex.ua<br>
+
+                This program is free software; you can redistribute it and/or<br>
+                modify it under the terms of the GNU General Public License<br>
+                as published by the Free Software Foundation; either version 2<br>
+                of the License, or (at your option) any later version.<br><br>
+
+                This program is distributed in the hope that it will be useful,<br>
+                but WITHOUT ANY WARRANTY; without even the implied warranty of<br>
+                MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<br>
+                GNU General Public License for more details.<br><br>
+
+                You should have received a copy of the GNU General Public License<br>
+                along with this program; if not, write to the Free Software<br>
+                Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,<br>
+                MA 02110-1301, USA.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{literal}
+<script type="text/javascript">
+    tabs_menu_editor('#orientation_type_menu input[type=radio]').click(function(){
+        orientation = tabs_menu_editor(this).attr('id').replace('_orientation','');
+        tabs_menu_editor('#img_style_menu').attr('src','/wa-apps/shop/plugins/menuShop/img/'+orientation+'/'+style_menu+'.png');
+    });
+
+    tabs_menu_editor('#style_menu input[type=radio]').click(function(){
+        style_menu = tabs_menu_editor(this).attr('id').replace('_style','');
+        tabs_menu_editor('#img_style_menu').attr('src','/wa-apps/shop/plugins/menuShop/img/'+orientation+'/'+style_menu+'.png');
+    });
+
+</script>
+{/literal}
+
+<!-- Диалоги -->
+
+<script src="/wa-apps/shop/plugins/menuShop/js/function.js"></script>
+

@@ -1,0 +1,54 @@
+/*user css (this edit)*/
+.menu_vert {
+	background:#eee;
+}
+.menu_vert a {
+	font:12px/1.2em Arial, Helvetica, sans-serif;
+	text-align:left; 
+	padding: 10px 20px 10px 10px;
+	text-decoration:none;
+	color:#666;
+}
+.menu_vert a:hover { 
+	background:#f7f7f7; 
+	color:#000; 
+	text-decoration:none; 
+	text-shadow:none;
+}
+.menu_vert .active { 
+	background:#f7f7f7; 
+	color:#000;
+}
+.menu_vert ul { 
+	padding:0; 
+	background:#eee;
+	border:1px solid #ccc;
+	border-radius:5px;
+	box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+.menu_vert ul li { 
+	padding:0; 
+	margin:0;
+	border:0;
+}
+.menu_vert ul a {
+	border-radius: 5px; 
+}
+.menu_vert ul ul { padding:0; margin:0;}
+.arrow-left {
+	border-right-color:#eee; 
+	left:-4px; 
+}
+.arrow-left2 {
+	border-right-color:#ccc; 
+	left:-5px; 
+}
+.toLeft .arrow-left {
+	border-left-color:#eee;
+	right:-4px; 
+}
+.toLeft .arrow-left2 {
+	border-left-color:#ccc;
+	right:-5px; 
+}
+.arrow-right {border-left-color:#666;}

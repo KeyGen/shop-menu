@@ -1,0 +1,32 @@
+/*Эти стили у каждого свои, их копировать не нужно*/
+body {
+	color: #999;
+	font: 12px/1.2em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0 10px;
+}
+.conteiner {
+	margin: auto;
+	max-width: 800px;
+	text-align:center;
+	padding:115px 0 0 0;
+}
+.header {
+	background: #ccc;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	height:72px;
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+}
+.descr {
+	border-bottom: 1px dashed #ccc;
+	padding: 0 0 15px 0;
+	text-align: left;
+}
+h2 { clear:both; padding:40px 0 5px 0; line-height:1.2em}
+hr { clear:both; border:0; border-bottom:1px dashed #ccc; height:0; margin:20px 0; display:block}
+.sample { padding:10px 0; position:relative;}

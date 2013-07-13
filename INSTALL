@@ -1,0 +1,20 @@
+Установка:
+
+1. Копируем папку menuShop в каталог: /wa-apps/shop/plugins
+2. Добавляем запись в /wa-config/apps/shop/plugins.php
+Этот файл должен выглядеть примерно так:
+
+<?php
+
+return array (
+  'menuShop' => true,
+);
+
+3. Добавляем из папки db_change две таблицы в базу данных
+
+3. Добавляем в нужный шаблон helper:
+{$menuShopFrontend->getMenuShop()}
+
+Сделал видео по устаноки и использованию:
+Установка:
+Использование: 

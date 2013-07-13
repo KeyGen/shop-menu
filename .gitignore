@@ -1,0 +1,28 @@
+# Скомпилированные модули
+*.so
+*.so.*
+*.deb
+
+# Makefile
+Makefile
+*.o
+Makefile.Debug
+Makefile.Release
+
+# Pro.user
+*.user
+
+# Темп файлы ОС
+*~
+.directory
+
+# Папки
+bin
+lib
+debug
+release
+Database
+
+# Статистика
+*.lessonStat
+*.mdb
